@@ -72,3 +72,15 @@ iterateStr.next(); // {value: 'e', done: false}
 iterateStr.next(); // {value: 'x', done: false}
 iterateStr.next(); // {value: 't', done: false}
 iterateStr.next(); // {value: undefined, done: true}
+
+// ------------------------------------------------------------------------>>
+
+// For-of loop
+const forOf = () => {
+  for (let value of array) {
+    console.log(value);
+  }
+};
+forOf();
+
+// ------------------------------------------------------------------------>>
