@@ -3,7 +3,8 @@
     -------
         A. Iterate 
         B. ES5 Iteration (old implementation)
-        C. ES6 iterable[Symbol.iterator]; native implementation.
+        C. ES6 Array iteration -> native implementation.
+        D. ES6 String iteration -> native implementation.
 
     Notes:
     -----------
@@ -52,7 +53,7 @@ iterated.next(); // {done: true, value: undefined}
 
 // ------------------------------------------------------------------------>>
 
-// C. ES6 iterable[Symbol.iterate]; native implementation.
+// C. ES6 Array iteration -> native implementation.
 const array = [2, 4, 10];
 const iterate = array[Symbol.iterator]();
 iterate.next(); // {value: 2, done: false}
@@ -61,3 +62,13 @@ iterate.next(); // {value: 10, done: false}
 iterate.next(); // {value: undefined, done: true}
 
 // ------------------------------------------------------------------------>>
+
+// D. ES6 String iteration -> native implementation.
+
+const str = "Text";
+const iterateStr = str[Symbol.iterator]();
+iterateStr.next(); // {value: 'T', done: false}
+iterateStr.next(); // {value: 'e', done: false}
+iterateStr.next(); // {value: 'x', done: false}
+iterateStr.next(); // {value: 't', done: false}
+iterateStr.next(); // {value: undefined, done: true}
