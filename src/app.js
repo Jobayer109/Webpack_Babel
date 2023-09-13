@@ -84,3 +84,9 @@ const forOf = () => {
 forOf();
 
 // ------------------------------------------------------------------------>>
+
+// String looping with "for-of" loop:
+const string = "Jobayer";
+for (let value of string) {
+  value; // J o b a y e r
+}
