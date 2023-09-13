@@ -5,6 +5,9 @@
         B. ES5 Iteration (old implementation)
         C. ES6 Array iteration -> native implementation.
         D. ES6 String iteration -> native implementation.
+        E. For-of loop
+        F. String looping with "for-of" loop:
+        G. Generators in jS
 
     Notes:
     -----------
@@ -17,7 +20,6 @@
             * But we can iterate object that we created manually. 
             * Normal loop isn't manually controlled.
             * Every iterate have an next() method.
-            * 
 */
 
 // ------------------------------------------------------------------------>>
@@ -75,7 +77,7 @@ iterateStr.next(); // {value: undefined, done: true}
 
 // ------------------------------------------------------------------------>>
 
-// For-of loop
+// E. For-of loop
 const forOf = () => {
   for (let value of array) {
     console.log(value);
@@ -85,8 +87,10 @@ forOf();
 
 // ------------------------------------------------------------------------>>
 
-// String looping with "for-of" loop:
+// F. String looping with "for-of" loop:
 const string = "Jobayer";
 for (let value of string) {
   value; // J o b a y e r
 }
+
+// ------------------------------------------------------------------------>>
