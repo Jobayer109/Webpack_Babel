@@ -3,6 +3,7 @@
     -------
         A. Iterate 
         B. ES5 Iteration (old implementation)
+        C. ES6 iterable[Symbol.iterator]; native implementation.
 
     Notes:
     -----------
@@ -42,13 +43,21 @@ const crateIterator = (collection) => {
   };
 };
 
-const iterate = crateIterator(arr);
-iterate.next(); // {done: false, value: 1}
-iterate.next(); // {done: false, value: 2}
-iterate.next(); // {done: false, value: 3}
-iterate.next(); // {done: false, value: 4}
-iterate.next(); // {done: true, value: undefined}
+const iterated = crateIterator(arr);
+iterated.next(); // {done: false, value: 1}
+iterated.next(); // {done: false, value: 2}
+iterated.next(); // {done: false, value: 3}
+iterated.next(); // {done: false, value: 4}
+iterated.next(); // {done: true, value: undefined}
 
 // ------------------------------------------------------------------------>>
 
-//
+// C. ES6 iterable[Symbol.iterate]; native implementation.
+const array = [2, 4, 10];
+const iterate = array[Symbol.iterator]();
+iterate.next(); // {value: 2, done: false}
+iterate.next(); // {value: 4, done: false}
+iterate.next(); // {value: 10, done: false}
+iterate.next(); // {value: undefined, done: true}
+
+// ------------------------------------------------------------------------>>
